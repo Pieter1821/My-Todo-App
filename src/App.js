@@ -1,23 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: "learn React", completed: false },
+    { id: 2, text: "Build a todo app", completed: false },
+  ]);
+
+  const [newTodo, setNewTodo] = useState("");
+
+  const addTodo = (text) => {
+    setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
+  };
+
+  const handleNewTodoChange = (event) => {
+    setNewTodo(event.target.value);
+  };
+
+  const handleAddTodo = (event) => {
+    event.preventDefault();
+    addTodo(newTodo);
+    setNewTodo("");
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Todo App</h1>
+      <form onSubmit={handleAddTodo}>
+        <input
+          type="text"
+          value={newTodo}
+          onChange={handleNewTodoChange}
+          placeholder="Enter New todo"
+        />
+      </form>
+
+      <ul>
+        {todos.map((todo) => (
+          <li
+            key={todo.id}
+            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+          >
+            {todo.text}{" "}
+            <button onClick={() => toggleTodo(todo.id)}>
+              {todo.completed ? "Incomplete" : "Complete"}
+            </button>{" "}
+            <button onClick={() => removeTodo(todo.id)}>Remove Todo</button>
+          </li>
+        ))}
+      </ul>
+      <button onClick={() => addTodo("New Todo")}>Add Todo</button>
     </div>
   );
 }
