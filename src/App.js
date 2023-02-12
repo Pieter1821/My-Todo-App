@@ -45,6 +45,7 @@ function App() {
           onChange={handleNewTodoChange}
           placeholder="Enter New todo"
         />
+        <button onClick={() => addTodo("New Todo")}>Add Todo</button>
       </form>
 
       <ul>
@@ -61,9 +62,8 @@ function App() {
           </li>
         ))}
       </ul>
-      <button onClick={() => addTodo("New Todo")}>Add Todo</button>
     </div>
-  );
-}
+    );
+  }
 
 export default App;
