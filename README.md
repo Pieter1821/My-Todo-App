@@ -1,6 +1,6 @@
 # My-Todo-App
 
-My-Todo-App is a simple, user-friendly web application that allows users to perform various tasks.
+My React App is a simple, user-friendly web application that allows users to perform various tasks.
 
 ## Features
 
@@ -11,7 +11,7 @@ My-Todo-App is a simple, user-friendly web application that allows users to perf
 
 ## Technologies Used
 
-My-Todo-App is built using the following technologies:
+My React App is built using the following technologies:
 
 - ReactJS: A JavaScript library for building user interfaces
 - JavaScript: A high-level, interpreted programming language
@@ -54,4 +54,5 @@ If you'd like to contribute to the development of My React App, feel free to cre
 
 ## License
 
-My-todo-App is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+My React App is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
