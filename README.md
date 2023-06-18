@@ -1,6 +1,6 @@
 # My-Todo-App
 
-My React App is a simple, user-friendly web application that allows users to perform various tasks.
+ is a simple, user-friendly web application that allows users to perform various tasks.
 
 ## Features
 
@@ -11,7 +11,7 @@ My React App is a simple, user-friendly web application that allows users to per
 
 ## Technologies Used
 
-My React App is built using the following technologies:
+is built using the following technologies:
 
 - ReactJS: A JavaScript library for building user interfaces
 - JavaScript: A high-level, interpreted programming language
