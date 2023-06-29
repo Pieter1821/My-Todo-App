@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>My Todo App</h1>
       <form onSubmit={handleAddTodo}>
         <input
@@ -45,25 +45,33 @@ function App() {
           onChange={handleNewTodoChange}
           placeholder="Enter New todo"
         />
-        <button onClick={() => addTodo("New Todo")}>Add Todo</button>
+        <button type="submit">Add Todo</button>
       </form>
 
       <ul>
         {todos.map((todo) => (
           <li
             key={todo.id}
-            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+            className={`todo-item ${todo.completed ? "completed" : ""}`}
           >
             {todo.text}{" "}
-            <button onClick={() => toggleTodo(todo.id)}>
+            <button
+              className={`toggle-button ${todo.completed ? "complete" : ""}`}
+              onClick={() => toggleTodo(todo.id)}
+            >
               {todo.completed ? "Incomplete" : "Complete"}
             </button>{" "}
-            <button onClick={() => removeTodo(todo.id)}>Remove Todo</button>
+            <button
+              className="remove-button"
+              onClick={() => removeTodo(todo.id)}
+            >
+              Remove Todo
+            </button>
           </li>
         ))}
       </ul>
     </div>
-    );
-  }
+  );
+}
 
 export default App;

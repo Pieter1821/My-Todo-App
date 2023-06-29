@@ -1,75 +1,82 @@
-.app {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
-  font-size: 50px;
-  margin-bottom: 20px;
-  color: lime;
-}
-
-li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: lightgray;
-  border-radius: 5px;
-}
-
-.completed {
-  text-decoration: line-through;
-  background-color: black;
+  text-align: center;
+  color: #333;
 }
 
 form {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   margin-bottom: 20px;
 }
 
 input[type="text"] {
-  width: 60%;
-  padding: 10px;
+  flex-grow: 1;
+  padding: 8px;
   font-size: 16px;
-  margin-right: 20px;
+  border: none;
+  border-radius: 4px;
 }
 
-button[type="submit"] {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: lightblue;
+button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  width: 60%;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 24;
-  }
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  form {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+li.completed {
+  text-decoration: line-through;
+}
 
-  input[type="text"] {
-    width: 100%;
-  }
+button.toggle-button,
+button.remove-button {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-  ul {
-    width: 100%;
-  }
+button.toggle-button:hover,
+button.remove-button:hover {
+  background-color: #eaeaea;
+}
+
+button.toggle-button.complete {
+  color: #4caf50;
+}
+
+button.remove-button {
+  color: #f44336;
 }
