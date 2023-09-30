@@ -1,4 +1,4 @@
-/* App.css */
+
 
 body {
   font-family: Arial, sans-serif;
@@ -61,7 +61,7 @@ li.completed {
 button.toggle-button,
 button.remove-button {
   padding: 6px 12px;
-  background-color: transparent;
+  background-color: #ccc;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -70,7 +70,7 @@ button.remove-button {
 
 button.toggle-button:hover,
 button.remove-button:hover {
-  background-color: #eaeaea;
+  background-color: #333;
 }
 
 button.toggle-button.complete {

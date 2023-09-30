@@ -9,8 +9,18 @@ function App() {
 
   const [newTodo, setNewTodo] = useState("");
 
+  // Function to generate unique IDs for new todos
+  const generateId = () => {
+    return Math.floor(Math.random() * 10000); 
+  };
+
   const addTodo = (text) => {
-    setTodos([...todos, { id: todos.length + 1, text, completed: false }]);
+    if (text.trim() !== "") {
+      // Generate a unique ID for the new todo
+      const newId = generateId();
+
+      setTodos([...todos, { id: newId, text, completed: false }]);
+    }
   };
 
   const handleNewTodoChange = (event) => {
