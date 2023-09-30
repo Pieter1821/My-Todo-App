@@ -3,8 +3,6 @@
  is a simple, user-friendly web application that allows users to perform various tasks.
 
 ## Features
-
-- User authentication
 - Dynamic data display
 - Responsive design
 - Easy navigation
